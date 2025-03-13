@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions & Answer</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/quiz3.css' %}">
+</head>
+<body>
+    <header>
+        <h1>"Quiz: Test Your Knowledge!" </h1>
+      </header>
+  <div class="container">
+    <div class="question">
+      <h3>Q1: What is the Original Title of the Indian Constitution in Sanskrit?</h3>
+      <p >
+        <div class="options">
+          <li> a) Bhāratīya Vesabhūsā</li>
+          <li>b) Bhāratīya Saśastra</li>
+          <li>c) Bhāratīya Saṃvidhāna</li>
+          <li>d) Bhāratīya Vidyā Bhavan</li>
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(1)">Show Answer</button>
+      <p class="answer" id="answer1">Answer : b) B. R. Ambedkar.</p>
+    </div>
+    <div class="question">
+      <h3>Q2: Name the branches of the Indian Constitution?</h3>
+      <p >
+        <div class="options">
+          <li>  a) Executive, Judiciary</li>
+          <li> b) Executive, Legislature</li>
+          <li> c) Judiciary, Legislature, High Court</li>
+          <li> d) Executive, Legislature, Judiciary</li>  
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(2)">Show Answer</button>
+      <p class="answer" id="answer2">Answer : d) Executive, Legislature, Judiciary</p>
+    </div>
+    <div class="question">
+      <h3>Q3: Under Judiciary how many Courts are there?</h3>
+      <p >
+        <div class="options">
+          <li>a) 4</li>
+          <li>b) 5</li>
+          <li>c) 1</li>
+          <li>d) 3</li>  
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(3)">Show Answer</button>
+      <p class="answer" id="answer3">Answer :  d) 3 (Supreme Court, High Courts, and District Courts)</p>
+    </div>
+    <div class="question">
+      <h3>Q4: Where is the Original Constitution preserved?</h3>
+      <p >
+        <div class="options">
+          <li>  a) Noida </li>
+          <li>b) Uttar Pradesh</li>
+          <li>c) New Delhi </li>
+          <li>d) Madras </li>  
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(4)">Show Answer</button>
+      <p class="answer" id="answer4">Answer :  c) New Delhi</p>
+    </div>
+    <div class="question">
+      <h3>Q5: When was the Indian National Flag adopted?</h3>
+      <p >
+        <div class="options">
+          <li> a) 15 August 1946 </li>
+          <li>b) 15 August 1947 </li>
+          <li>c) 22 July 1947</li>
+          <li>d) 22 July 1948</li>  
+        </div>
+      </p>
+      <!--  a) 1976
+            b) 1971
+            c) 1977
+            d) 1975 -->
+      <button class="answer-btn" onclick="showAnswer(5)">Show Answer</button>
+      <p class="answer" id="answer5">Answer :  d) 22 July 1948</p>
+    </div>
+
+    <div class="btn">
+      <a href="{% url 'home' %}">
+      <button type="submit">Back To Home</button>
+    </a>
+  </div>
+  </div>
+
+  <script>
+    function showAnswer(questionNumber) {
+      var answerId = "answer" + questionNumber;
+      var answerElement = document.getElementById(answerId);
+      if (answerElement.style.display === "none") {
+        answerElement.style.display = "block";
+      } else {
+        answerElement.style.display = "none";
+      }
+    }
+
+    // Add event listener to hide answers when clicking outside
+    document.body.addEventListener('click', function(event) {
+      var answerElements = document.getElementsByClassName('answer');
+      for (var i = 0; i < answerElements.length; i++) {
+        var answerElement = answerElements[i];
+        if (event.target !== answerElement.previousElementSibling && event.target !== answerElement) {
+          answerElement.style.display = 'none';
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>

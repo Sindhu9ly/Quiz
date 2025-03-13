@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions & Answer</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/funquiz.css' %}">
+</head>
+<body>
+    <header>
+      <h1>"Quiz: Test Your Knowledge!" </h1>
+
+      </header>
+  <div class="container">
+        <form action="" method="POST"></form>
+        <div class="question">
+          <h3>Q1: What is the term duration for the President of India?</h3>
+          <p >
+            <div class="options">
+              <li>a) 2 years</li>
+              <li>b) 3 years</li>
+              <li>c) 4 years</li>
+              <li>d) 5 years</li>
+            </div>
+          </p>
+
+          <button class="answer-btn" onclick="showAnswer(1)">Show Answer</button>
+          <p class="answer" id="answer1">Answer : d) 5 years.</p>
+        </div>
+        <div class="question">
+          <h3>Q2: Who is the father of the Indian Constitution?</h3>
+          <p >
+            <div class="options">
+              <li>a) Jawaharlal Nehru</li>
+              <li>b) B. R. Ambedkar</li>
+              <li>c) Mahatma Gandhi</li>
+              <li>d) Dadabhai Naoroji</li>  
+            </div>
+          </p>
+
+          <button class="answer-btn" onclick="showAnswer(2)">Show Answer</button>
+          <p class="answer" id="answer2">Answer : b) B.R. Ambedkar.</p>
+        </div>
+        <div class="question">
+          <h3>Q3: Which language was the Indian Constitution written in?</h3>
+          <p >
+            <div class="options">
+              <li> a) Sanskrit</li>
+              <li>b) English</li>
+              <li>c) Hindi</li>
+              <li>d) English & Hindi</li>  
+            </div>
+          </p>
+
+          <button class="answer-btn" onclick="showAnswer(3)">Show Answer</button>
+          <p class="answer" id="answer3">Answer : d) English & Hindi.</p>
+        </div>
+        <div class="question">
+          <h3>Q4: What is the Celebration of the Indian Constitution called?</h3>
+          <p >
+            <div class="options">
+              <li> a) Independence Day </li>
+              <li>b) Republic Day </li>
+              <li>c) Central Excise Day </li>
+              <li>d) Quit India Day </li>  
+            </div>
+          </p>
+
+          <button class="answer-btn" onclick="showAnswer(4)">Show Answer</button>
+          <p class="answer" id="answer4">Answer : b) Republic Day.</p>
+        </div>
+        <div class="question">
+          <h3>Q5: When was the word “Secular and Socialist” word added to the Indian Constitution?</h3>
+          <p >
+            <div class="options">
+              <li>  a) 1976 </li>
+              <li>b) 1971 </li>
+              <li>c) 1977</li>
+              <li>d) 1975 </li>  
+            </div>
+          </p>
+          <button class="answer-btn" onclick="showAnswer(5)">Show Answer</button>
+          <p class="answer" id="answer5">Answer : a) 1976.</p>
+        </div>
+
+        <div class="btn">
+          <a href="{% url 'home' %}">
+          <button type="submit">Back To Home</button>
+        </a>
+      </form>
+  </div>
+  </div>
+
+  <script>
+    function showAnswer(questionNumber) {
+      var answerId = "answer" + questionNumber;
+      var answerElement = document.getElementById(answerId);
+      if (answerElement.style.display === "none") {
+        answerElement.style.display = "block";
+      } else {
+        answerElement.style.display = "none";
+      }
+    }
+
+    // Add event listener to hide answers when clicking outside
+    document.body.addEventListener('click', function(event) {
+      var answerElements = document.getElementsByClassName('answer');
+      for (var i = 0; i < answerElements.length; i++) {
+        var answerElement = answerElements[i];
+        if (event.target !== answerElement.previousElementSibling && event.target !== answerElement) {
+          answerElement.style.display = 'none';
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>

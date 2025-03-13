@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+<body> 
+    <header>
+        <h1>"Quiz Time: Let's Test Your Knowledge!" </h1>
+      </header>
+      <div class="outercontainer">
+        <a href="{% url 'funquiz' %}" target="_blank">
+          <div class="container">
+              <h2>Quiz 1</h2>
+              <img src="{% static 'css/Constitution-2.webp' %}" alt="Image 1">
+          </div>
+        </a>
+        <a href="{% url 'quiz2' %}" target="_blank">
+          <div class="container">
+              <h2>Quiz 2</h2>
+              <img src="{% static 'css/Constitution-3.jpg' %}" alt="Image 2">
+          </div>
+        </a>
+        <a href="{% url 'quiz3' %}" target="_blank">
+          <div class="container">
+              <h2>Quiz 3</h2>
+              <img src="{% static 'css/Constitution-4.png' %}" alt="Image 3">
+          </div>
+        </a>
+      </div>
+</body>
+</html>

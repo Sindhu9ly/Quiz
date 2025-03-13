@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Gamimg Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <section>
+        <Header>
+            <div class="mainheading">
+            <div class="heading1">
+                <h1>Kids Gaming Website</h1>
+            </div>
+            <div class="heading2">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'quiz' %}" target="_blank">Quiz</a></li>
+                        <li><a href="{% url 'govtevents' %}" target="_blank">Govt.Events</a></li>
+                        <li><a href="" target="_blank">Contactus</a></li>
+                        <li><a href="">Logout</a> </li>
+                    </ul>
+                </nav>
+            </div>              
+        </div>
+        </Header>
+    </section>
+
+    <section>
+        <div class="content">
+            <div class="poster">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="services">
+            <a href="{% url 'quiz' %}" target="_blank">
+                <div class="content1">
+                    <img src="{% static 'css/Q & A.png' %}" alt="">
+                    <h2>Quiz</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'govtevents' %}" target="_blank">
+                <div class="content1">
+                    <img src="{% static 'css/government-events.jpg' %}" alt="">
+                    <h2>Govt.Events</h2>
+                </div>
+            </a>
+
+            <a href="" target="_blank">
+            <div class="content1">
+                <img src="{% static 'css/contactus.png' %}" alt="">
+                <h2>Contactus</h2>
+            </div>
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>

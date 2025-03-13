@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions & Answer</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/quiz2.css' %}">
+</head>
+<body>
+    <header>
+      <h1>"Quiz: Test Your Knowledge!" </h1>
+
+      </header>
+  <div class="container">
+    <div class="question">
+      <h3>Q1: Who was the Chairman of the Drafting Committee??</h3>
+      <p >
+        <div class="options">
+          <li>a) Benegal Narsing Rau</li>
+          <li>b) B. R. Ambedkar</li>
+          <li>c) Rajendra Prasad</li>
+          <li>d) Jawaharlal Nehru</li>
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(1)">Show Answer</button>
+      <p class="answer" id="answer1">Answer : b) B. R. Ambedkar.</p>
+    </div>
+    <div class="question">
+      <h3>Q2: When was the Constitution of India adopted by the Constituent Assembly of India?</h3>
+      <p >
+        <div class="options">
+          <li> a) 26 November 1947</li>
+          <li> b) 26 November 1948</li>
+          <li> c) 26 November 1949</li>
+          <li> d) 26 November 1950</li>  
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(2)">Show Answer</button>
+      <p class="answer" id="answer2">Answer : c) 26 November 1949</p>
+    </div>
+    <div class="question">
+      <h3>Q3: Which Act was replaced by the Constitution of India as the country’s Fundamental Governing Document?</h3>
+      <p >
+        <div class="options">
+          <li>a) Government of India Act 1935</li>
+          <li>b) Government of India Act 1937</li>
+          <li>c) Government of India Act 1945</li>
+          <li>d) Government of India Act 1947</li>  
+        </div>
+      </p>
+        <!-- 
+          a) Sanskrit
+          b) English
+          c) Hindi
+          d) English & Hindi
+         -->
+      <button class="answer-btn" onclick="showAnswer(3)">Show Answer</button>
+      <p class="answer" id="answer3">Answer :  a) Government of India Act 1935</p>
+    </div>
+    <div class="question">
+      <h3>Q4: When does India celebrate its Constitution?</h3>
+      <p >
+        <div class="options">
+          <li> a) 2nd October </li>
+          <li>b) 15 August </li>
+          <li>c) 26 January </li>
+          <li>d) 24 February </li>  
+        </div>
+      </p>
+      <button class="answer-btn" onclick="showAnswer(4)">Show Answer</button>
+      <p class="answer" id="answer4">Answer :  c) 26 January</p>
+    </div>
+    <div class="question">
+      <h3>Q5: How many branches are in the Indian Constitution?</h3>
+      <p >
+        <div class="options">
+          <li>a) 2 </li>
+          <li>b) 3 </li>
+          <li>c) 4</li>
+          <li>d) 5 </li>  
+        </div>
+      </p>
+      <!--  a) 1976
+            b) 1971
+            c) 1977
+            d) 1975 -->
+      <button class="answer-btn" onclick="showAnswer(5)">Show Answer</button>
+      <p class="answer" id="answer5">Answer :  b) 3</p>
+    </div>
+
+    <div class="btn">
+      <a href="{% url 'home' %}">
+      <button type="submit">Back To Home</button>
+    </a>
+  </div>
+  </div>
+
+  <script>
+    function showAnswer(questionNumber) {
+      var answerId = "answer" + questionNumber;
+      var answerElement = document.getElementById(answerId);
+      if (answerElement.style.display === "none") {
+        answerElement.style.display = "block";
+      } else {
+        answerElement.style.display = "none";
+      }
+    }
+
+    // Add event listener to hide answers when clicking outside
+    document.body.addEventListener('click', function(event) {
+      var answerElements = document.getElementsByClassName('answer');
+      for (var i = 0; i < answerElements.length; i++) {
+        var answerElement = answerElements[i];
+        if (event.target !== answerElement.previousElementSibling && event.target !== answerElement) {
+          answerElement.style.display = 'none';
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>

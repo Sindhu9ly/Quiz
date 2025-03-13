@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Children's Events</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/events.css' %}">
+
+</head>
+<body>
+  <header>
+    <h1>Government Events / Schemes </h1>
+  </header>
+
+  <div class="poster">
+
+  </div>
+
+  </section>
+  <section id="sports-events">
+    <h2>Kids | National Portal Of India </h2>
+    <a href="https://www.india.gov.in/people-groups/life-cycle/kids" target="_blank">
+    <div class="btn">
+        <button>Click Here to Visit Website </button>
+    </div>
+    </a>
+
+    <hr>
+    <h2>Sports Events by Sports Authority of India | Ministry of Youth</h2>
+    <a href="https://www.kheloindia.gov.in/index.html" target="_blank">
+    <div class="btn">
+        <button><span>Click Here to Visit Website</span> </button>
+    </div>
+    </a>
+    <hr>
+    <div class="btn">
+      &nbsp;
+      <a href="{% url 'home' %}">
+      <button type="submit">Back To Home</button>
+    </a>
+  </div>
+</body>
+</html>
